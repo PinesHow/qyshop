@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiguliuxing.dts.db.dao.DtsShopMapper">
+  <resultMap id="BaseResultMap" type="com.qiguliuxing.dts.db.domain.DtsShop">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+    <result column="shop_introduction" jdbcType="VARCHAR" property="shopIntroduction" />
+    <result column="business_license" jdbcType="VARCHAR" property="businessLicense" />
+    <result column="shop_keeper_num" jdbcType="VARCHAR" property="shopKeeperNum" />
+    <result column="logo_url" jdbcType="VARCHAR" property="logoUrl" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="id_card_positive" jdbcType="VARCHAR" property="idCardPositive" />
+    <result column="id_card_obverse" jdbcType="VARCHAR" property="idCardObverse" />
+    <result column="business_license_num" jdbcType="VARCHAR" property="businessLicenseNum" />
+    <result column="business_license_start" jdbcType="VARCHAR" property="businessLicenseStart" />
+    <result column="business_license_end" jdbcType="VARCHAR" property="businessLicenseEnd" />
+    <result column="business_license_url" jdbcType="VARCHAR" property="businessLicenseUrl" />
+    <result column="shop_type" javaType="INTEGER" property="shopType" />
+    <result column="contact_phone" jdbcType="VARCHAR" property="contactPhone" />
+    <result column="phone_num" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="legal_person" jdbcType="VARCHAR" property="legalPerson" />
+    <result column="categor_id" jdbcType="INTEGER" property="categoryId" />
+    <result column="shop_pic" jdbcType="VARCHAR" property="shopPic" />
+    <result column="is_popularity" jdbcType="BIT" property="isPopularity"/>
+    <result column="is_hot" jdbcType="BIT" property="isHot"/>
+    <result column="is_popularity_value" jdbcType="INTEGER" property="isPopularityValue"/>
+    <result column="receive_sms" jdbcType="BIT" property="receiveSms"/>
+    <result column="sub_mch_id" jdbcType="VARCHAR" property="subMchId"/>
+  </resultMap>
+
+
+  <sql id="Base_Column_List">
+    id, shop_name, shop_introduction, business_license, shop_keeper_num, logo_url,address, id_card_positive, id_card_obverse, business_license_num, business_license_start,
+    business_license_end, business_license_url, shop_type, contact_phone, phone_num, legal_person, category_id,shop_pic,is_popularity,is_hot,is_popularity_value,receive_sms,
+    sub_mch_id
+  </sql>
+
+  <select id="selectShopById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from dts_shop
+    where id = #{id}
+  </select>
+
+  <update id="update" parameterType="com.qiguliuxing.dts.db.domain.DtsShop">
+    update dts_shop
+    <set>
+      <if test="shopName != null">
+        shop_name = #{shopName,jdbcType=VARCHAR},
+      </if>
+      <if test="shopIntroduction != null">
+        shop_introduction = #{shopIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicense != null">
+        business_license = #{businessLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="shopKeeperNum != null">
+        shop_keeper_num = #{shopKeeperNum,jdbcType=VARCHAR},
+      </if>
+      <if test="logoUrl != null">
+        logo_url = #{logoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardPositive != null">
+        id_card_positive = #{idCardPositive,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardObverse != null">
+        id_card_obverse = #{idCardObverse,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseNum != null">
+        business_license_num = #{businessLicenseNum,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseStart != null">
+        business_license_start = #{businessLicenseStart,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseEnd != null">
+        business_license_end = #{businessLicenseEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicenseUrl != null">
+        business_license_url = #{businessLicenseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="shopType != null">
+        shop_type = #{shopType,jdbcType=INTEGER},
+      </if>
+      <if test="contactPhone != null">
+        contact_phone = #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNum != null">
+        phone_num = #{phoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPerson != null">
+        legal_person = #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null">
+        category_id = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="shopPic != null">
+        shop_pic = #{shopPic,jdbcType=VARCHAR},
+      </if>
+     <if test="receiveSms !=null ">
+       receive_sms=#{receiveSms},
+     </if>
+     <if test="subMchId != null">
+       sub_mch_id = #{subMchId},
+     </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectShopHotList" resultMap="BaseResultMap">
+    select * from dts_shop
+    where is_hot is true
+  </select>
+
+  <select id="selectShopApplyByShopIdf" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    select check_status_id from dts_shop_apply
+    where shop_id = #{shopId}
+  </select>
+
+  <update id="updateApplyByShopId">
+    update dts_shop_apply set check_status_id = 2,shop_msg = #{shopMsg}
+    where shop_id = #{shopId}
+  </update>
+
+  <update id="updatePermissionByShopId" parameterType="java.lang.Integer">
+    update dts_admin set role_ids = '[5]'
+    where id = #{userId}
+  </update>
+
+  <select id="selectShopByPhoneNum" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from dts_shop where phone_num = #{phoneNum}
+  </select>
+
+</mapper>

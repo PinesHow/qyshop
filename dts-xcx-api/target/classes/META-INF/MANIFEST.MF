@@ -1,0 +1,47 @@
+Manifest-Version: 1.0
+Main-Class: com.qiguliuxing.dts.xcx.Application
+Class-Path: spring-core-5.0.8.RELEASE.jar reactive-streams-1.0.2.jar xpp
+ 3_min-1.1.4c.jar qiniu-java-sdk-7.2.29.jar jackson-databind-2.9.8.jar x
+ mlpull-1.1.3.1.jar jackson-annotations-2.9.0.jar junit-4.12.jar netty-t
+ ransport-4.1.27.Final.jar weixin-java-common-3.3.0.jar netty-buffer-4.1
+ .27.Final.jar commons-collections-3.2.2.jar pagehelper-5.1.4.jar spring
+ -boot-devtools-2.0.4.RELEASE.jar spring-boot-2.0.4.RELEASE.jar netty-ha
+ ndler-4.1.27.Final.jar javax.mail-1.6.1.jar commons-io-2.5.jar mybatis-
+ spring-boot-autoconfigure-1.3.2.jar jodd-core-3.7.1.jar log4j-api-2.10.
+ 0.jar logback-classic-1.2.3.jar reactor-core-3.1.8.RELEASE.jar jdom-1.1
+ .jar tomcat-embed-core-8.5.32.jar gson-2.8.5.jar okhttp-3.14.4.jar bcpr
+ ov-jdk15on-1.59.jar spring-boot-starter-web-2.0.4.RELEASE.jar dom4j-2.0
+ .0.jar commons-lang3-3.7.jar fastjson-1.2.62.jar mybatis-3.4.6.jar cos_
+ api-5.4.4.jar jackson-core-2.9.6.jar httpmime-4.5.6.jar classmate-1.3.4
+ .jar jaxen-1.1.6.jar spring-boot-starter-2.0.4.RELEASE.jar tomcat-embed
+ -websocket-8.5.32.jar httpclient-4.5.6.jar hamcrest-core-1.3.jar spring
+ -aop-5.0.8.RELEASE.jar spring-beans-5.0.8.RELEASE.jar aliyun-sdk-oss-2.
+ 5.0.jar spring-boot-starter-jdbc-2.0.4.RELEASE.jar xstream-1.4.10.jar b
+ cpkix-jdk15on-1.59.jar lettuce-core-5.0.4.RELEASE.jar netty-common-4.1.
+ 27.Final.jar hibernate-validator-6.0.15.Final.jar jul-to-slf4j-1.7.25.j
+ ar spring-context-5.0.8.RELEASE.jar jsqlparser-1.0.jar weixin-java-mini
+ app-3.3.0.jar javax.annotation-api-1.3.2.jar spring-webmvc-5.0.8.RELEAS
+ E.jar jackson-module-parameter-names-2.9.6.jar httpcore-4.4.10.jar json
+ -lib-2.4-jdk15.jar log4j-to-slf4j-2.10.0.jar spring-jcl-5.0.8.RELEASE.j
+ ar commons-lang-2.6.jar spring-boot-autoconfigure-2.0.4.RELEASE.jar oki
+ o-1.17.2.jar qcloudsms-1.0.5.jar mybatis-spring-1.3.2.jar druid-1.1.10.
+ jar slf4j-api-1.7.25.jar spring-data-keyvalue-2.0.9.RELEASE.jar weixin-
+ java-pay-3.3.0.jar commons-email-1.5.jar spring-oxm-5.0.8.RELEASE.jar c
+ ommons-beanutils-1.9.3.jar mysql-connector-java-5.1.46.jar spring-boot-
+ starter-mail-2.0.4.RELEASE.jar spring-tx-5.0.8.RELEASE.jar ezmorph-1.0.
+ 6.jar spring-boot-starter-json-2.0.4.RELEASE.jar jackson-datatype-jdk8-
+ 2.9.6.jar joda-time-2.9.9.jar servlet-api-2.5.jar tomcat-embed-el-8.5.3
+ 2.jar logback-core-1.2.3.jar spring-expression-5.0.8.RELEASE.jar json-2
+ 0170516.jar jboss-logging-3.3.2.Final.jar jodd-upload-3.7.1.jar pagehel
+ per-spring-boot-starter-1.2.5.jar spring-context-support-5.0.8.RELEASE.
+ jar netty-codec-4.1.27.Final.jar validation-api-2.0.1.Final.jar spring-
+ data-redis-2.0.9.RELEASE.jar spring-boot-starter-data-redis-2.0.4.RELEA
+ SE.jar weixin4j-0.1.3.jar jodd-http-3.7.1.jar jackson-datatype-jsr310-2
+ .9.6.jar jcl-over-slf4j-1.7.25.jar guava-20.0.jar mybatis-spring-boot-s
+ tarter-1.3.2.jar commons-logging-1.2.jar spring-boot-starter-tomcat-2.0
+ .4.RELEASE.jar activation-1.1.jar netty-resolver-4.1.27.Final.jar druid
+ -spring-boot-starter-1.1.10.jar spring-boot-starter-logging-2.0.4.RELEA
+ SE.jar snakeyaml-1.19.jar HikariCP-2.7.9.jar commons-codec-1.11.jar spr
+ ing-web-5.0.8.RELEASE.jar pagehelper-spring-boot-autoconfigure-1.2.5.ja
+ r spring-jdbc-5.0.8.RELEASE.jar spring-data-commons-2.0.9.RELEASE.jar
+

@@ -1,0 +1,11 @@
+/application-core.yml
+
+.idea
+*.iml
+out
+gen
+/.DS_Store
+/.project
+/.settings/
+/.gitignore
+/log/

@@ -1,0 +1,181 @@
+dts:
+  # 开发者应该设置成自己的wx相关信息
+  wx:
+#    微信小程序appId和秘钥
+#    app-id: wxc7b286ff011bbf36
+#    app-secret: 7f18c5ff6ed70d4ffb41c7d320d9c2a9
+#    mch-id: 1576207411
+#    mch-key: yunliexiaotong2020wangankeji2019
+#   公众号 appId和秘钥 (测试环境)
+#   霖
+#    app-id: wx4ce4acd887dde734
+#    app-secret: 6f688c3eb18cb8430a5b0d6cf43497a4
+#    mch-id: 1576207411
+#    mch-key: yunliexiaotong2020wangankeji2019
+#   兰
+#    app-id: wx0b95f3d246d590e5
+#    app-secret: 4dcb281396c5bdce2a9e4c9a726a0723
+#    mch-id:
+#    mch-key:
+#   公众号 appId和秘钥 (线上环境)
+#    app-id: wxf27c3ccd080e8c6e
+#    app-secret: b89315a433f76b6f8fd7813ea9f0f1a2
+#    mch-id: 1576207411
+#    mch-key: yunliexiaotong2020wangankeji2019
+#   服务商 appId和秘钥 (线上环境)
+    app-id: wx6dcbe78b3d5b06fd
+    mch-id: 1600975533
+    mch-key: eb1f3a45f0b337a92672833d45ce0335
+    sub-app-id: wxf27c3ccd080e8c6e
+#    sub-app-id: wxc7b286ff011bbf36 #本地测试环境appId
+#    sub-app-id: wx4ce4acd887dde734 #前端对接测试环境appId (公众号)
+    app-secret: b89315a433f76b6f8fd7813ea9f0f1a2
+#    app-secret: 7f18c5ff6ed70d4ffb41c7d320d9c2a9 #本地测试环境appId秘钥
+#    app-secret: 6f688c3eb18cb8430a5b0d6cf43497a4 #前端对接测试环境appId秘钥 (公众号)
+    #回调地址
+    notify-url: https://www.gzwakjaqjy.cn/wx/order/dtsNotify
+    # 商户证书文件路径
+    # 请参考“商户证书”一节 https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=4_3
+    key-path: /tencent/project/sty/cert/wxPay/apiclient_cert.p12
+
+  #通知相关配置
+  notify:
+    mail:
+      # 邮件通知配置,邮箱一般用于接收业务通知例如收到新的订单，sendto 定义邮件接收者，通常为商城运营人员
+      enable: true
+      host: smtp.aliyun.com
+      username: pineshow@126.com
+      password:
+      sendfrom: xxx@aliyun.com
+      sendto: xxx@qq.com
+
+    # 短消息模版通知配置
+    # 短信息用于通知客户，例如发货短信通知，注意配置格式；template-name，template-templateId 请参考 NotifyType 枚举值
+    sms:
+      enable: true
+#      appid: 1400286323
+#      appkey: 223123sade14c129c4ce9a30b5f90ad2c
+      template:
+        - name: paySucceed
+          templateId: 112233
+        - name: captcha
+          templateId: 112233
+        - name: ship
+          templateId: 112233
+        - name: refund
+          templateId: 112233
+
+    # 微信模版通知配置
+    # 微信模版用于通知客户或者运营者，注意配置格式；template-name，template-templateId 请参考 NotifyType 枚举值
+    wx:
+      enable: true
+      template:
+        - name: paySucceed
+          templateId: sirUcgTAIQfoIxxxxxx
+        - name: captcha
+          templateId: OfBkXh7UILpsDkcxxxxxx
+        - name: ship
+          templateId: dqTuWzrmL_wwK-SJsxxxxxx
+        - name: applyRefund
+          templateId: lzPHltMpUOiBol7i2Yxxxxxx
+        - name: refund
+          templateId: NDy6EpPuu2C9NMUxxxxxx
+
+  # 快鸟物流查询配置
+  express:
+    enable: true
+    appId: "xxxxxx"
+    appKey: "xxxxxx"
+    vendors:
+      - code: "HTKY"
+        name: "百世快递"
+      - code: "YZBK"
+        name: "邮政国内标快"
+      - code: "ZTO"
+        name: "中通快递"
+      - code: "YTO"
+        name: "圆通速递"
+      - code: "YD"
+        name: "韵达速递"
+      - code: "YZPY"
+        name: "邮政快递包裹"
+      - code: "EMS"
+        name: "EMS"
+      - code: "DBL"
+        name: "德邦快递"
+      - code: "FAST"
+        name: "快捷快递"
+      - code: "ZJS"
+        name: "宅急送"
+      - code: "TNT"
+        name: "TNT快递"
+      - code: "UPS"
+        name: "UPS"
+      - code: "DHL"
+        name: "DHL"
+      - code: "FEDEX"
+        name: "FEDEX联邦(国内件)"
+      - code: "FEDEX_GJ"
+        name: "FEDEX联邦(国际件)"
+
+  # 对象存储配置
+  storage:
+    # 当前工作的对象存储模式，分别是local、aliyun、tencent、qiniu
+    active: local
+    # 本地对象存储配置信息
+    local:
+      storagePath: dts/storage
+      # 这个地方应该是wx模块的WxStorageController的fetch方法对应的地址
+      address: http://localhost:8090/demo/
+      port: 8090
+      wxaddress: http://localhost:8092/wx/
+      wxport: 8092
+    # 阿里云对象存储配置信息
+    aliyun:
+      endpoint: oss-cn-guangzhou.aliyuncs.com
+      accessKeyId: 111111
+      accessKeySecret: xxxxxx
+      bucketName: dts-shop
+    # 腾讯对象存储配置信息
+    # 请参考 https://cloud.tencent.com/document/product/436/6249
+    tencent:
+      secretId: 111111
+      secretKey: xxxxxx
+      region: xxxxxx
+      bucketName: dts
+    # 七牛云对象存储配置信息
+    qiniu:
+      endpoint: http://dtsshop.wx.clouddn.com
+      accessKey: 111111
+      secretKey: xxxxxx
+      bucketName: dts
+
+pagehelper:
+  helperDialect:  mysql
+  reasonable: true
+  supportMethodsArguments:  true
+  params: count=countSql
+
+spring:
+  datasource:
+    druid:
+#      url:  jdbc:mysql://192.168.1.12:3306/dts-shop?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+      url:  jdbc:mysql://182.61.55.148:3306/dts-shop?allowMultiQueries=true&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+#      url:  jdbc:mysql://139.155.32.239:3306/dts-shop?useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+      driver-class-name:  com.mysql.jdbc.Driver
+      username:  root
+#      password:  wangankeji
+      password: wangankeji@7rj
+#      password: 8EyN&usygroo
+      initial-size:  10
+      max-active:  50
+      min-idle:  10
+      max-wait:  60000
+      pool-prepared-statements:  true
+      max-pool-prepared-statement-per-connection-size:  20
+      validation-query:  SELECT 1 FROM DUAL
+      test-on-borrow:  false
+      test-on-return:  false
+      test-while-idle:  true
+      time-between-eviction-runs-millis:  60000
+      filters:  stat,wall

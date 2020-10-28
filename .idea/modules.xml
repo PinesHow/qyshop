@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dts.iml" filepath="$PROJECT_DIR$/dts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dts-admin-api/dts-admin-api.iml" filepath="$PROJECT_DIR$/dts-admin-api/dts-admin-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dts-core/dts-core.iml" filepath="$PROJECT_DIR$/dts-core/dts-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dts-dao/dts-dao.iml" filepath="$PROJECT_DIR$/dts-dao/dts-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dts-wx-api/dts-wx-api.iml" filepath="$PROJECT_DIR$/dts-wx-api/dts-wx-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dts-xcx-api/dts-xcx-api.iml" filepath="$PROJECT_DIR$/dts-xcx-api/dts-xcx-api.iml" />
+    </modules>
+  </component>
+</project>

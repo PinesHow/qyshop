@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qiguliuxing.dts.db.dao.DtsShopDao">
+  <resultMap id="BaseResultMap" type="com.qiguliuxing.dts.db.domain.DtsShop">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="shop_name" jdbcType="VARCHAR" property="shopName" />
+    <result column="shop_introduction" jdbcType="VARCHAR" property="shopIntroduction" />
+    <result column="business_license" jdbcType="VARCHAR" property="businessLicense" />
+    <result column="shop_keeper_num" jdbcType="VARCHAR" property="shopKeeperNum" />
+    <result column="logo_url" jdbcType="VARCHAR" property="logoUrl" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="id_card_positive" jdbcType="VARCHAR" property="idCardPositive" />
+    <result column="id_card_obverse" jdbcType="VARCHAR" property="idCardObverse" />
+    <result column="business_license_num" jdbcType="VARCHAR" property="businessLicenseNum" />
+    <result column="business_license_start" jdbcType="VARCHAR" property="businessLicenseStart" />
+    <result column="business_licenseEnd" jdbcType="VARCHAR" property="businessLicenseEnd" />
+    <result column="business_licenseUrl" jdbcType="VARCHAR" property="businessLicenseUrl" />
+    <result column="shop_type" jdbcType="INTEGER" property="shopType" />
+    <result column="contact_phone" jdbcType="VARCHAR" property="contactPhone" />
+    <result column="phone_num" jdbcType="VARCHAR" property="phoneNum" />
+    <result column="legal_person" jdbcType="VARCHAR" property="legalPerson" />
+    <result column="categor_id" jdbcType="INTEGER" property="categoryId" />
+    <result column="shop_pic" jdbcType="VARCHAR" property="shopPic" />
+    <result column="is_popularity" jdbcType="BIT" property="isPopularity"/>
+    <result column="is_hot" jdbcType="BIT" property="isHot"/>
+    <result column="is_popularity_value" jdbcType="INTEGER" property="isPopularityValue"/>
+    <result column="receive_sms" jdbcType="BIT" property="receiveSms"/>
+    <result column="sub_mch_id" jdbcType="VARCHAR" property="subMchId"/>
+  </resultMap>
+
+  <select id="getShopColumnInfo" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from dts_shop where id = #{shopId}
+  </select>
+
+</mapper>
